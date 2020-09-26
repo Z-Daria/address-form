@@ -7,34 +7,40 @@
     <link href="./style.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-    <label for="address">Город, улица, дом, квартира</label>
-    <input id="address" list="addressOptions" type="text" maxlength="100" placeholder="Введите адрес в свободной форме">
-    <br>
-    <br>
-    <form>
-        <label for="region">Регион:</label>
-        <input id="region" list="regions" type="text">
-        <br>
-        <br>
-        <label for="district">Район:</label>
-        <input id="district" type="text">
-        <br>
-        <br>
-        <label for="city">Город:</label>
-        <input id="city" type="text">
-        <br>
-        <br>
-        <label for="settlement">Населенный пункт:</label>
-        <input id="settlement" type="text">
-        <br>
-        <br>
-        <label for="street">Улица:</label>
-        <input id="street" type="text">
-        <br>
-        <br>
-        <label for="house">Дом:</label>
-        <input id="house" type="text">
-    </form>
+    <div class="container">
+        <h1>Форма заполнения адреса</h1>
+        <div class="main-field">
+            <label for="address">Город, улица, дом, квартира</label>
+            <input id="address" list="addressOptions" type="text" maxlength="100" placeholder="Введите адрес">
+            <button>Заполнить</button>
+        </div>
+        <form>
+            <div class="field">
+                <label for="region">Регион:</label>
+                <input id="region" list="regions" type="text">
+            </div>
+            <div class="field">
+                <label for="district">Район:</label>
+                <input id="district" type="text">
+            </div>
+            <div class="field">
+                <label for="city">Город:</label>
+                <input id="city" type="text" required>
+            </div>
+            <div class="field">
+                <label for="settlement">Населенный пункт:</label>
+                <input id="settlement" type="text">
+            </div>
+            <div class="field">
+                <label for="street">Улица:</label>
+                <input id="street" type="text" required>
+            </div>
+            <div class="field">
+                <label for="house">Дом:</label>
+                <input id="house" type="text" required>
+            </div>
+        </form>
+    </div>
     <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
