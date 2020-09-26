@@ -1,0 +1,5 @@
+
+/* remove arrow from dropdown datalist */
+input::-webkit-calendar-picker-indicator {
+    display: none;
+  }
