@@ -4,10 +4,12 @@ let choices;
 
 $(document).ready(() => {
     // to request hints while entering address
-    $('#address').on('keyup focus change', function(event) {
-        $('datalist').remove();
-        let container = event.target;
-        getSuggestions(container);
+    $('#address').on('focus', function(event) {
+        $('#address').on('keyup change', function(event) {
+            $('datalist').remove();
+            let container = event.target;
+            getSuggestions(container);
+        })
     })
 });
 
@@ -36,7 +38,7 @@ function createOptionsList(container, suggestions) {
     choices = suggestions;
     let options = '<datalist id="' + container.attributes[1].value + '">';
     for (let i = 0; i < suggestions.length; i++) {
-        options += '<option value="' + suggestions[i].value + '">';
+        options += '<option>' + suggestions[i].value + '</option>';
     };
     options += '</datalist>';
     $(options).insertAfter(container);
@@ -44,8 +46,9 @@ function createOptionsList(container, suggestions) {
 
 $('#address').on('blur', event => {
     if (choices) {
-        $('#address').unbind('keyup focus change');
+        $('address').unbind('keyup change');
         let selected = event.target.value;
+        $('datalist').remove();
         fillinFields(choices.find(x => x.value == selected));
     }
 });
