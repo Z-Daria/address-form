@@ -1,5 +1,5 @@
 let url = 'https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/address';
-let token = '';
+let token = ' ';
 let choices = [];
 
 $(document).ready(() => {
